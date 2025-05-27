@@ -16,18 +16,32 @@ You will need the following to start using the connector:
 - A Microsoft Power Apps plan or
 - Microsoft Azure subscription for building Logic Apps.
 
-## Getting started
+## Getting Started
 
-1. To use the connector you first need to create a Content Type Definition (CTD) inside Flotiq. You will find detailed information on how to do it in the [Creating Content Type Definitions](https://flotiq.com/docs/panel/content-types/#creating-content-type-definitions) section of documentation. If you'd like to get started quickly - you can try one of the pre-defined types, like "Event":
-   ![](https://github.com/flotiq/gatsby-starter-event-calendar/raw/master/docs/create-definition-event.png)
-2. Once you created the CTD - you will need an API key to allow the connector to access data in your Flotiq instance. You can find detailed information on [creating scoped API-keys](https://flotiq.com/docs/API/#user-defined-api-keys) in our documentation. We recommend to create a scoped key and restrict its access only to the operations strictly required for this particular connector to work - for example Create & Update permissions on the Event content type. 
-   ![](images/flotiq-scoped-api-key.png)
-3. Once the API key is created - please copy the key, it will be used to authorize the connector.
+1. **Create a Content Type Definition in Flotiq**  
+   Follow the guide in [our documentation](https://flotiq.com/docs/panel/content-types/#creating-content-type-definitions) or start with a ready-made example like `"Event"`:
+
+   ![Creating content type in Flotiq](https://api.flotiq.com/image/0x0/_media-bd6699ad-8940-4315-92aa-898ce0a4d091.png)
+
+2. **Generate a scoped API key**  
+   Navigate to the API Keys section in Flotiq and [create a new key](https://flotiq.com/docs/API/#user-defined-api-keys).  
+   We recommend limiting its scope to only the CTD and operations (e.g., Create, Update) required by the connector.
+
+   ![Scoped API keys in Flotiq](https://api.flotiq.com/image/0x0/_media-12fd9d37-408a-4b1c-b138-ff71296c2811.png)
 
 ## Enabling the connector in Logic Apps
 
-1. You can easily enable the connector in Logic Apps - just search for Flotiq in the connector database. Authorize the connection to your Flotiq system by pasting the API key copied from Flotiq. 
-   ![](images/flotiq-connector-auth.png)
-2. Select the `Create Content Object` action to feed data into Flotiq. Once selected, please select the Content Type Definition name from the first Select field. After that is selected - the form will automatically expand to display all the attributes of the CTD.
-   ![](images/flotiq-create-event-from-outlook.png)
-3. You can now continue designing your Logic App - as usual.
+   ![flotiq connector authorization](https://api.flotiq.com/image/0x0/_media-4eb8ec6b-ae57-4efb-9a0a-28ec1acbe700.png)
+
+2. **Use the `Create Content Object` action**  
+   Choose your target Content Type Definition from the dropdown.  
+   Once selected, a dynamic form will appear, letting you map all the CTD’s fields.
+
+   ![Creating event in Flotiq from outlook](https://api.flotiq.com/image/0x0/_media-cb00a2f9-e895-4378-9ec4-52e35670f1ce.png)
+
+3. **Continue building your Logic App**  
+   You can now connect Flotiq with other Microsoft services in your workflow.
+
+---
+
+Got questions? Visit [flotiq.com](https://flotiq.com) or reach out via our support channels.
